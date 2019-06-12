@@ -7,10 +7,11 @@ using System.Threading.Tasks;
 
 namespace IrakliIremashviliEntityProject
 {
+    [DbConfigurationType(typeof(MySql.Data.Entity.MySqlEFConfiguration))]
     class DemoDbContext : DbContext
     {
 
-        public DemoDbContext() : base("DemoEntityDB")
+        public DemoDbContext() : base("server=localhost;port=3306;uid=root;password=password;database=DemoEntityDB;")
         {
             Database.SetInitializer(new DemoDBInitializer());
         }

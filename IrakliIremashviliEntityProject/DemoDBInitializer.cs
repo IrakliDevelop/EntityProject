@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace IrakliIremashviliEntityProject
 {
-    class DemoDBInitializer : DropCreateDatabaseAlways<DemoDbContext>
+    class DemoDBInitializer : DropCreateDatabaseIfModelChanges<DemoDbContext>
     {
         protected override void Seed(DemoDbContext context)
         {

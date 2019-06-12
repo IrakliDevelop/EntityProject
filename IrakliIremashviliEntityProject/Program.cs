@@ -28,15 +28,14 @@ namespace IrakliIremashviliEntityProject
                     {
                         foreach (var phone in db.Phones)
                         {
-                            Console.WriteLine(phone);
+                            Console.WriteLine(phone.Model);
                         }
 
                         Console.WriteLine("That's All");
-                        Console.ReadKey();
                     } else if (action == 2)
                     {
                         Console.WriteLine("Enter Phone Model's Name: ");
-                        var Model = Console.ReadLine();
+                        var model = Console.ReadLine();
                         Console.WriteLine("Select the index of Manufacturer: ");
                         var i = 0;
                         foreach (var man in db.Manufacturers)
@@ -47,7 +46,7 @@ namespace IrakliIremashviliEntityProject
                         }
                         var manIndex = Int32.Parse(Console.ReadLine());
                         var chosenManufacturer = db.Manufacturers.ToArray();
-                        phones.Add(new Phone() { Id = 1, Model = Model, Manufacturer = chosenManufacturer[manIndex], });
+                        phones.Add(new Phone() { Model = model, Manufacturer = chosenManufacturer[manIndex-1], });
                         
                     } else if (action == 3)
                     {
